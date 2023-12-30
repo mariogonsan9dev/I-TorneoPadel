@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Padel</title>
+</head>
+
+<body>
+
+    <h1>Ranking</h1>
+    <iframe width="450" height="390" position="absolute"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0DUKTBaMjfWwNnrAYhRqttxPK_4xH41PZ-hViCODejlfleCdoDTT7cnw9bkJ0ri8uOOovgxAx1xlx/pubhtml?gid=1321360833&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+    <h1>Partido a partido</h1>
+    <iframe width="1100" height="650"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0DUKTBaMjfWwNnrAYhRqttxPK_4xH41PZ-hViCODejlfleCdoDTT7cnw9bkJ0ri8uOOovgxAx1xlx/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+    <!--
+        <form>
+            <input type="text" id="my-textbox" autocomplete="off" />
+        </form>
+    -->
+
+</body>
+
+<script>
+
+
+    const myTextbox = document.getElementById("my-textbox");
+    myTextbox.addEventListener("submit", event => {
+  event.preventDefault();
+  // actual logic, e.g. validate the form
+  console.log('Form submission cancelled.');
+  highlight("Mario")
+});
+
+    function highlight(text) {
+        var inputText = document.body;
+        var innerHTML = inputText.innerHTML;
+        var index = innerHTML.indexOf(text);
+        if (index >= 0) {
+            innerHTML = innerHTML.substring(0, index) + "<span class='highlight'>" + innerHTML.substring(index, index + text.length) + "</span>" + innerHTML.substring(index + text.length);
+            inputText.innerHTML = innerHTML;
+        }
+    }
+
+</script>
+
+</html>
